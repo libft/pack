@@ -1,0 +1,7 @@
+f.wrap_malloc.ft
+f.wrap_free.ft
+f.wrap_read.ft
+f.wrap_write.ft
+f.wrap_exit.ft
+f.wrap_open.ft
+f.wrap_close.ft
