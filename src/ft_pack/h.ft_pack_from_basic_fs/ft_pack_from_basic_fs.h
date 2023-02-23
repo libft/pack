@@ -18,7 +18,7 @@
 # include "ft_types.h"
 # include "o_basic_fs.h"
 
-typedef t_err	(*const t_ft_pack_from_basic_fs_on_error)(
+typedef t_err	(*t_ft_pack_from_basic_fs_on_error)(
 					void *context,
 					const char *path);
 

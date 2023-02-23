@@ -27,15 +27,16 @@ typedef struct s_o_basic_fs_file
 	const struct s_o_basic_fs_file_vtable *const	v;
 }	t_o_basic_fs_file;
 
-typedef void					(*const t_o_basic_fs_v_unsafe_dispose)(
-									t_o_basic_fs *self);
-typedef t_err					(*const t_o_basic_fs_v_close)(
-									t_o_basic_fs *self);
-typedef t_err					(*const t_o_basic_fs_v_flush)(
-									t_o_basic_fs *self);
-typedef t_o_basic_fs_file		*(*const t_o_basic_fs_v_open_file)(
-									t_o_basic_fs *self,
-									const char *path);
+typedef void				(*t_o_basic_fs_v_unsafe_dispose)(
+								t_o_basic_fs *self);
+typedef t_err				(*t_o_basic_fs_v_close)(
+								t_o_basic_fs *self);
+typedef t_err				(*t_o_basic_fs_v_flush)(
+								t_o_basic_fs *self);
+typedef t_o_basic_fs_file	*(*t_o_basic_fs_v_open_file)(
+								t_o_basic_fs *self,
+								const char *path);
+
 typedef struct s_o_basic_fs_vtable
 {
 	const t_o_basic_fs_v_unsafe_dispose	unsafe_dispose;
@@ -44,27 +45,27 @@ typedef struct s_o_basic_fs_vtable
 	const t_o_basic_fs_v_open_file		open_file;
 }	t_o_basic_fs_vtable;
 
-typedef void					(*const t_o_basic_fs_file_v_unsafe_dispose)(
-									t_o_basic_fs_file *self);
-typedef t_err					(*const t_o_basic_fs_file_v_close)(
-									t_o_basic_fs_file *self);
-typedef t_err					(*const t_o_basic_fs_file_v_flush)(
-									t_o_basic_fs_file *self);
-typedef t_err					(*const t_o_basic_fs_file_v_read)(
-									t_o_basic_fs_file *self,
-									t_byte *buffer,
-									size_t length,
-									size_t *optional_out_read_size);
-typedef t_err					(*const t_o_basic_fs_file_v_read_all)(
-									t_o_basic_fs_file *self,
-									t_byte *buffer,
-									size_t length,
-									size_t *optional_out_read_size);
-typedef t_err					(*const t_o_basic_fs_file_v_write)(
-									t_o_basic_fs_file *self,
-									const t_byte *buffer,
-									size_t length,
-									size_t *out_wrote_size);
+typedef void				(*t_o_basic_fs_file_v_unsafe_dispose)(
+								t_o_basic_fs_file *self);
+typedef t_err				(*t_o_basic_fs_file_v_close)(
+								t_o_basic_fs_file *self);
+typedef t_err				(*t_o_basic_fs_file_v_flush)(
+								t_o_basic_fs_file *self);
+typedef t_err				(*t_o_basic_fs_file_v_read)(
+								t_o_basic_fs_file *self,
+								t_byte *buffer,
+								size_t length,
+								size_t *optional_out_read_size);
+typedef t_err				(*t_o_basic_fs_file_v_read_all)(
+								t_o_basic_fs_file *self,
+								t_byte *buffer,
+								size_t length,
+								size_t *optional_out_read_size);
+typedef t_err				(*t_o_basic_fs_file_v_write)(
+								t_o_basic_fs_file *self,
+								const t_byte *buffer,
+								size_t length,
+								size_t *out_wrote_size);
 
 typedef struct s_o_basic_fs_file_vtable
 {
