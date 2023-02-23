@@ -56,11 +56,6 @@ typedef t_err				(*t_o_basic_fs_file_v_read)(
 								t_byte *buffer,
 								size_t length,
 								size_t *optional_out_read_size);
-typedef t_err				(*t_o_basic_fs_file_v_read_all)(
-								t_o_basic_fs_file *self,
-								t_byte *buffer,
-								size_t length,
-								size_t *optional_out_read_size);
 typedef t_err				(*t_o_basic_fs_file_v_write)(
 								t_o_basic_fs_file *self,
 								const t_byte *buffer,
@@ -73,7 +68,6 @@ typedef struct s_o_basic_fs_file_vtable
 	const t_o_basic_fs_file_v_close				close;
 	const t_o_basic_fs_file_v_flush				flush;
 	const t_o_basic_fs_file_v_read				read;
-	const t_o_basic_fs_file_v_read_all			read_all;
 	const t_o_basic_fs_file_v_write				write;
 }	t_o_basic_fs_file_vtable;
 
